@@ -16,8 +16,9 @@ const main = async function(){
 			console.log('Starting yi-timelapse', interval, "sec")
 			await yi.connect()
 			console.log('Connected')
-			
+			let i=0
 			while(true){
+				i++
 				const filepath = await yi.takePhoto()
 				console.log({i,filepath})
 				await sleep(interval*1000)
