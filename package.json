@@ -1,0 +1,22 @@
+{
+  "name": "yi-timelapse",
+  "version": "1.0.0",
+  "description": "nodejs app to control xiaomi yi camera",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivesklein/yi-timelapse.git"
+  },
+  "author": "ivesklein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivesklein/yi-timelapse/issues"
+  },
+  "homepage": "https://github.com/ivesklein/yi-timelapse#readme",
+  "dependencies": {
+    "yi-action-camera": "^0.1.4"
+  }
+}
