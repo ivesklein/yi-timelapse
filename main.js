@@ -11,15 +11,21 @@ const sleep = function(milis){
 const main = async function(){
 
 	try{
-		console.log('Starting yi-timelapse')
-		await yi.connect()
-		console.log('connected')
-		
-		for(let i in [0,1,2,3,4,5,6,7,8,9]){
-			const filepath = await yi.takePhoto()
-			console.log({i,filepath})
-			await sleep(5000)
+		const interval = +process.argv[2]
+		if(!isNaN(interval)){
+			console.log('Starting yi-timelapse', interval, "sec")
+			await yi.connect()
+			console.log('Connected')
+			
+			while(true){
+				const filepath = await yi.takePhoto()
+				console.log({i,filepath})
+				await sleep(interval*1000)
+			}
+		}else{
+			console.log("interval missing: node main.js [interval in seconds]")
 		}
+
 	}catch(e){
 		console.log(e)
 	}
